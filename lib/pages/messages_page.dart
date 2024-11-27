@@ -5,6 +5,9 @@ import 'package:chatter/widgets/widgets.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:jiffy/jiffy.dart';
+// Alias for faker package
+import 'package:flutter/widgets.dart' as flutter;  // Alias for flutter package
+
 
 import '../helpers.dart';
 
@@ -21,7 +24,7 @@ class MessagesPage extends StatelessWidget {
         SliverList(
           delegate: SliverChildBuilderDelegate(
             _delegate,
-            childCount: 2, // Jumlah item
+            childCount: 1, // Jumlah item
           ),
         )
       ],
@@ -33,7 +36,7 @@ class MessagesPage extends StatelessWidget {
     final date = Helpers.randomDate();
     return _MessageTitle(
       messageData: MessageData(
-        senderName: faker.person.name(),
+        senderName: "Rey Mahendra",
         message: faker.lorem.sentence(),
         messageDate: date,
         dateMessage: Jiffy.parseFromDateTime(date).fromNow(),
@@ -72,10 +75,18 @@ class _MessageTitle extends StatelessWidget {
           padding: const EdgeInsets.all(4.0),
           child: Row(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Avatar.medium(url: messageData.profilePicture),
-              ),
+             Padding(
+  padding: const EdgeInsets.all(10.0),  // Adds padding of 10.0 units on all sides
+  child: ClipRRect(  // Clips the child widget with rounded corners
+    borderRadius: BorderRadius.circular(50.0),  // Circular border radius to make it rounded
+    child: flutter.Image.asset(  // Using the alias 'flutter' for the 'Image' from the Flutter package
+      messageData.profilePicture,  // Path to your local image or URL
+      width: 35.0,  // Adjust the size as needed
+      height: 35.0, // Adjust the size as needed
+      fit: BoxFit.cover,  // Ensures the image covers the entire rounded area
+    ),
+  ),
+),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,7 +107,7 @@ class _MessageTitle extends StatelessWidget {
                     SizedBox(
                       height: 20,
                       child: Text(
-                        messageData.message,
+                       'test',
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
                           fontSize: 12,
@@ -116,15 +127,15 @@ class _MessageTitle extends StatelessWidget {
                     const SizedBox(
                       height: 4,
                     ),
-                    Text(
-                      messageData.dateMessage.toUpperCase(),
-                      style: const TextStyle(
-                        fontSize: 11,
-                        letterSpacing: -0.2,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.textFaded,
-                      ),
-                    ),
+                    // Text(
+                    //   messageData.dateMessage.toUpperCase(),
+                    //   style: const TextStyle(
+                    //     fontSize: 11,
+                    //     letterSpacing: -0.2,
+                    //     fontWeight: FontWeight.w600,
+                    //     color: AppColors.textFaded,
+                    //   ),
+                    // ),
                     const SizedBox(
                       height: 8,
                     ),
@@ -132,7 +143,7 @@ class _MessageTitle extends StatelessWidget {
                       width: 18,
                       height: 18,
                       decoration: const BoxDecoration(
-                        color: AppColors.secondary,
+                        color: Colors.cyan,
                         shape: BoxShape.circle,
                       ),
                       child: const Center(

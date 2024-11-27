@@ -37,7 +37,7 @@ class _LoginState extends State<Login> {
                 width: 200,
                 height: 200,
                 decoration: BoxDecoration(
-                  color: Colors.deepPurple.shade50,
+                  color: Colors.cyan.shade50,
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(
@@ -85,7 +85,7 @@ class _LoginState extends State<Login> {
                       decoration: InputDecoration(
                         labelText: 'Phone Number',
                         labelStyle:
-                            const TextStyle(fontSize: 18, color: Colors.purple),
+                            const TextStyle(fontSize: 14, color: Colors.cyan),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.black12),
                           borderRadius: BorderRadius.circular(10),
@@ -113,6 +113,9 @@ class _LoginState extends State<Login> {
                 ),
               ),
               SizedBox(
+                height: 28,
+              ),
+              SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
@@ -126,7 +129,7 @@ class _LoginState extends State<Login> {
                     foregroundColor:
                         WidgetStateProperty.all<Color>(Colors.white),
                     backgroundColor:
-                        WidgetStateProperty.all<Color>(Colors.purple),
+                        WidgetStateProperty.all<Color>(Colors.cyan),
                     shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
@@ -135,7 +138,7 @@ class _LoginState extends State<Login> {
                   child: const Padding(
                     padding: EdgeInsets.all(14),
                     child: Text(
-                      'Login',
+                      'Send verfication code',
                       style: TextStyle(fontSize: 16),
                     ),
                   ),

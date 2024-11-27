@@ -21,19 +21,30 @@ class _WelcomeState extends State<Welcome> {
           child: Column(
             children: [
               const SizedBox(
-                height: 190,
+                height: 100,
+              ),Container(
+                width: 200,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Colors.cyan.shade50,
+                  shape: BoxShape.circle,
+                ),
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  width: 240,
+                ),
               ),
               const Text(
-                "chatter",
+                "Chatter",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 55,
-                  fontWeight: FontWeight.w900,
-                  color: Colors.purple,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.cyan,
                 ),
               ),
               const SizedBox(
-                height: 160,
+                height: 50,
               ),
               // Image.asset(
               //   'assets/images/illustration-1.png',
@@ -77,7 +88,7 @@ class _WelcomeState extends State<Welcome> {
                     foregroundColor:
                         WidgetStateProperty.all<Color>(Colors.white),
                     backgroundColor:
-                        WidgetStateProperty.all<Color>(Colors.purple),
+                        WidgetStateProperty.all<Color>(Colors.cyan),
                     shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),
@@ -107,7 +118,7 @@ class _WelcomeState extends State<Welcome> {
                   },
                   style: ButtonStyle(
                     foregroundColor:
-                        WidgetStateProperty.all<Color>(Colors.purple),
+                        WidgetStateProperty.all<Color>(Colors.cyan),
                     backgroundColor:
                         WidgetStateProperty.all<Color>(Colors.white),
                     shape: WidgetStateProperty.all<RoundedRectangleBorder>(

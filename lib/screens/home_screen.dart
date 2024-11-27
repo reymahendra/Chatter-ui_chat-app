@@ -2,7 +2,6 @@ import 'package:chatter/pages/calls_page.dart';
 import 'package:chatter/pages/contacts_page.dart';
 import 'package:chatter/pages/messages_page.dart';
 import 'package:chatter/pages/notifications_page.dart';
-import 'package:chatter/theme.dart';
 import 'package:chatter/widgets/glowing_action_button.dart';
 import 'package:chatter/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
@@ -164,7 +163,7 @@ class __BottomNavigationBarState extends State<_BottomNavigationBar> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: GlowingActionButton(
-                  color: AppColors.secondary,
+                  color: Colors.cyan,
                   icon: CupertinoIcons.add,
                   onPressed: () {
                     print('TODO on new message');
@@ -224,7 +223,7 @@ class _NavigationBarItem extends StatelessWidget {
             Icon(
               icon,
               size: 20,
-              color: isSelected ? AppColors.secondary : null,
+              color: isSelected ? Colors.cyan : null,
             ),
             const SizedBox(
               height: 8,
@@ -235,7 +234,7 @@ class _NavigationBarItem extends StatelessWidget {
                   ? const TextStyle(
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
-                      color: AppColors.secondary,
+                      color: Colors.cyan,
                     )
                   : const TextStyle(fontSize: 11),
             ),

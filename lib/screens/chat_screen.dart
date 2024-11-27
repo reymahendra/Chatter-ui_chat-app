@@ -82,31 +82,7 @@ class _DemoMessageList extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: ListView(
         children: const [
-          _DateLable(lable: 'Yesterday'),
-          _MessageTile(
-            message: 'Hi, Lucy! How\'s your day going?',
-            messageDate: '12:01 PM',
-          ),
-          _MessageOwnTile(
-            message: 'You know how it goes...',
-            messageDate: '12:02 PM',
-          ),
-          _MessageTile(
-            message: 'Do you want Starbucks?',
-            messageDate: '12:02 PM',
-          ),
-          _MessageOwnTile(
-            message: 'Would be awesome!',
-            messageDate: '12:03 PM',
-          ),
-          _MessageTile(
-            message: 'Coming up!',
-            messageDate: '12:03 PM',
-          ),
-          _MessageOwnTile(
-            message: 'YAY!!!',
-            messageDate: '12:03 PM',
-          ),
+          // _DateLable(lable: 'Yesterday'),
         ],
       ),
     );
@@ -189,10 +165,11 @@ class _MessageOwnTile extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.end,
+
           children: [
             Container(
               decoration: const BoxDecoration(
-                color: AppColors.secondary,
+                color: Colors.cyan,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(_borderRadius),
                   bottomRight: Radius.circular(_borderRadius),
@@ -291,7 +268,7 @@ class _AppBarTitle extends StatelessWidget {
               ),
               const SizedBox(height: 2),
               const Text(
-                'Online now',
+                'Online',
                 style: TextStyle(
                   fontSize: 10,
                   fontWeight: FontWeight.bold,

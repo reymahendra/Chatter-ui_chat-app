@@ -37,7 +37,7 @@ class _RegisterState extends State<Register> {
                 width: 200,
                 height: 200,
                 decoration: BoxDecoration(
-                  color: Colors.deepPurple.shade50,
+                  color: Colors.cyan.shade50,
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(
@@ -81,11 +81,11 @@ class _RegisterState extends State<Register> {
                     TextFormField(
                       keyboardType: TextInputType.number,
                       style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
+                          fontSize: 1, fontWeight: FontWeight.bold),
                       decoration: InputDecoration(
                         labelText: 'Phone Number',
                         labelStyle:
-                            const TextStyle(fontSize: 18, color: Colors.purple),
+                            const TextStyle(fontSize: 14, color: Colors.cyan),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.black12),
                           borderRadius: BorderRadius.circular(10),
@@ -122,7 +122,7 @@ class _RegisterState extends State<Register> {
                       decoration: InputDecoration(
                         labelText: 'Name',
                         labelStyle:
-                            const TextStyle(fontSize: 18, color: Colors.purple),
+                            const TextStyle(fontSize: 14, color: Colors.cyan),
                         enabledBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.black12),
                           borderRadius: BorderRadius.circular(10),
@@ -153,7 +153,7 @@ class _RegisterState extends State<Register> {
                     foregroundColor:
                         WidgetStateProperty.all<Color>(Colors.white),
                     backgroundColor:
-                        WidgetStateProperty.all<Color>(Colors.purple),
+                        WidgetStateProperty.all<Color>(Colors.cyan),
                     shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(24),

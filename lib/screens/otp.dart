@@ -37,7 +37,7 @@ class _OtpState extends State<Otp> {
                 width: 200,
                 height: 200,
                 decoration: BoxDecoration(
-                  color: Colors.deepPurple.shade50,
+                  color: Colors.cyan.shade50,
                   shape: BoxShape.circle,
                 ),
                 child: Image.asset(
@@ -109,7 +109,7 @@ class _OtpState extends State<Otp> {
                           foregroundColor:
                               WidgetStateProperty.all<Color>(Colors.white),
                           backgroundColor:
-                              WidgetStateProperty.all<Color>(Colors.purple),
+                              WidgetStateProperty.all<Color>(Colors.cyan),
                           shape:
                               WidgetStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
@@ -135,7 +135,7 @@ class _OtpState extends State<Otp> {
                 "Didn't you receive any code?",
                 style: TextStyle(
                   color: Colors.black54,
-                  fontSize: 16,
+                  fontSize: 14,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -144,7 +144,7 @@ class _OtpState extends State<Otp> {
               ),
               const Text(
                 "Resend New Code",
-                style: TextStyle(fontSize: 18, color: Colors.purple),
+                style: TextStyle(fontSize: 18, color: Colors.cyan),
               )
             ],
           ),

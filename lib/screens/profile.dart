@@ -1,8 +1,31 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ProfileScreen extends StatelessWidget {
+  
+  int user = 1;
+  String name = '';
+  String info = '';
+  String number = '';
+
+  void cekStatus() {
+    if (user == 1) {
+      name = "Mutiara";
+      info = "I'm Happy";
+      number = "0895-2243-0989";
+    } else {
+      name = "Rey Mahendra";
+      info = "I'm Calm";
+      number = "0895-2243-0989";
+    }
+  }
+  
+
+  ProfileScreen({super.key});
   @override
+  
   Widget build(BuildContext context) {
+    cekStatus();
     return Scaffold(
       appBar: AppBar(
         title: Text('Profile'),
@@ -27,7 +50,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   Text(
-                    'John Doe',
+                    name,
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
@@ -48,18 +71,18 @@ class ProfileScreen extends StatelessWidget {
             // Bagian Daftar Opsi
             ListTile(
               leading: Icon(Icons.person),
-              title: Text('Account'),
+              title: Text(name),
             ),
             ListTile(
               leading: Icon(Icons.info),
-              title: Text('im happy'),
+              title: Text(info),
               onTap: () {
                 // Navigasi ke layar Privacy
               },
             ),
             ListTile(
               leading: Icon(Icons.phone),
-              title: Text('0895-1283-7123'),
+              title: Text(number),
               onTap: () {
                 // Navigasi ke layar Notifications
               },
@@ -69,4 +92,6 @@ class ProfileScreen extends StatelessWidget {
       ),
     );
   }
+
+  
 }
