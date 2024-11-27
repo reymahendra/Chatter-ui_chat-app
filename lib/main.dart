@@ -1,20 +1,30 @@
 import 'package:chatter/screens/screens.dart';
 import 'package:chatter/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:device_preview/device_preview.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(DevicePreview(builder: (context) => const MyApp()));
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var appTheme = AppTheme;
+    var appTheme2 = AppTheme;
     return MaterialApp(
-      theme: AppTheme.light(),
-      darkTheme: AppTheme.dark(),
+      debugShowCheckedModeBanner: false,
+      theme: appTheme.light(),
+      darkTheme: appTheme2.dark(),
       themeMode: ThemeMode.dark,
       title: 'Chatter',
-      home: HomeScreen(),
+      home: const Welcome(),
     );
   }
+}
+
+extension on Type {
+  light() {}
+
+  dark() {}
 }

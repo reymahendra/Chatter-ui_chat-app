@@ -15,11 +15,14 @@ class MessagesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        const SliverToBoxAdapter(
-          child: _Stories(),
-        ),
+        // const SliverToBoxAdapter(
+        //   child: _Stories(),
+        // ),
         SliverList(
-          delegate: SliverChildBuilderDelegate(_delegate),
+          delegate: SliverChildBuilderDelegate(
+            _delegate,
+            childCount: 2, // Jumlah item
+          ),
         )
       ],
     );
@@ -33,7 +36,7 @@ class MessagesPage extends StatelessWidget {
         senderName: faker.person.name(),
         message: faker.lorem.sentence(),
         messageDate: date,
-        dateMessage: Jiffy(date).fromNow(),
+        dateMessage: Jiffy.parseFromDateTime(date).fromNow(),
         profilePicture: Helpers.randomPictureUrl(),
       ),
     );

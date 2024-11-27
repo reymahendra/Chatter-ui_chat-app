@@ -7,8 +7,7 @@ import 'package:chatter/widgets/glowing_action_button.dart';
 import 'package:chatter/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../helpers.dart';
+import 'package:chatter/screens/profile.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -67,7 +66,34 @@ class HomeScreen extends StatelessWidget {
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 24.0),
-            child: Avatar.small(url: Helpers.randomPictureUrl()),
+            child: Container(
+              width: 36,
+              height: 36,
+              decoration: BoxDecoration(
+                shape: BoxShape
+                    .rectangle, // Rectangle agar dapat ditambahkan borderRadius
+                borderRadius: BorderRadius.circular(18), // Membulatkan gambar
+                color: Colors
+                    .grey, // Warna latar belakang jika gambar gagal dimuat
+              ),
+              child: ClipRRect(
+                borderRadius:
+                    BorderRadius.circular(18), // Membuat tepi membulat
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ProfileScreen(),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    'assets/images/profile.png',
+                    fit: BoxFit.cover, // Mengisi area container
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),
@@ -130,7 +156,7 @@ class __BottomNavigationBarState extends State<_BottomNavigationBar> {
               ),
               _NavigationBarItem(
                 index: 1,
-                lable: 'Notifications',
+                lable: 'Stories',
                 icon: CupertinoIcons.bell_solid,
                 isSelected: (selectedIndex == 1),
                 onTap: handleItemSelected,
